@@ -12,9 +12,11 @@ class ProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $produtos = Produto::paginate(10);
+
+        return view('app.produto.index', ['produtos' => $produtos, 'request' => $request->all()]);
     }
 
     /**
@@ -24,7 +26,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        echo 'create';
     }
 
     /**
@@ -35,7 +37,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'store';
     }
 
     /**
@@ -46,7 +48,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+        echo 'show';
     }
 
     /**
@@ -57,7 +59,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        echo 'edit';
     }
 
     /**
@@ -69,7 +71,7 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        echo 'update';
     }
 
     /**
@@ -80,6 +82,6 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        echo 'destroy';
     }
 }
