@@ -43,7 +43,7 @@ class ProdutoController extends Controller
             'nome' => 'required|min:3|max:40',
             'descricao' => 'required|min:3|max:2000',
             'peso' => 'required|integer',
-            'unidade_id' => 'exist:unidades,id' // SÓ PODERA ENTRAR ITENS QUE FAÇA PARTE DA TABELA unidades DA COLUNA id
+            'unidade_id' => 'exists:unidades,id' // SÓ PODERA ENTRAR ITENS QUE FAÇA PARTE DA TABELA unidades DA COLUNA id
         ];
         $feedback = [
             'required' => 'O campo :attribute deve ser preenchido',
@@ -56,7 +56,7 @@ class ProdutoController extends Controller
 
             'peso.integer' => 'O campo peso deve ser um número inteiro',
 
-            'unidade_id' => 'A unidade de medida informada não existe'
+            'unidade_id.exists' => 'A unidade de medida informada não existe'
         ];
         $request->validate($rule, $feedback);
         Produto::create($request->all());
