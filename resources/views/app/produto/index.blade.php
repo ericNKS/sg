@@ -28,6 +28,7 @@
                             <th>Unidade ID</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     
@@ -45,6 +46,9 @@
                                 </td>
                                 <td>
                                     {{$produto->unidade_id}}
+                                </td>
+                                <td>
+                                    <a class="delete" href="{{route('produto.show', ['produto' => $produto->id])}}">Visualizar</a>
                                 </td>
                                 <td>
                                     <a class="delete" href="">Excluir</a>
