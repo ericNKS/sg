@@ -1,6 +1,6 @@
 @extends('app.layouts.basico') <!-- Pega o layout -->
 @section('titulo', 'Produto')
-    
+
 @section('conteudo')
 <div class="conteudo-pagina">
     <div class="titulo-pagina-2">
@@ -19,19 +19,19 @@
     <div class="informacao-pagina">
         <div style="width: 90%; margin-left: auto; margin-right: auto;">
             <div class="informacao-pagina">
-                <table border="1" width="100%">
+                <table border="1" width="100%" style="margin-top: 50px">
                     <thead>
                         <tr>
                             <th>Nome</th>
                             <th>Descrição</th>
                             <th>Peso</th>
                             <th>Unidade ID</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>-</th>
+                            <th>-</th>
+                            <th>-</th>
                         </tr>
                     </thead>
-                    
+
                     <tbody>
                         @foreach ($produtos as $produto)
                             <tr>
@@ -48,13 +48,17 @@
                                     {{$produto->unidade_id}}
                                 </td>
                                 <td>
-                                    <a class="delete" href="{{route('produto.show', ['produto' => $produto->id])}}">Visualizar</a>
+                                    <a class="" href="{{route('produto.show', ['produto' => $produto->id])}}">Visualizar</a>
                                 </td>
                                 <td>
-                                    <a class="delete" href="">Excluir</a>
+                                    <form id="form_{{$produto->id}}" action="{{route('produto.destroy', ['produto'=>$produto->id])}}" method="post">
+                                        @csrf
+                                        @method("DELETE")
+                                        <a href="#" onclick="document.getElementById('form_{{$produto->id}}').submit()" class="delete" >Excluir</a>
+                                    </form>
                                 </td>
                                 <td>
-                                    <a href="">Editar </a>
+                                    <a href="{{route('produto.edit', ['produto' => $produto->id])}}">Editar </a>
                                 </td>
                             </tr>
                         @endforeach

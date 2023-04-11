@@ -1,6 +1,6 @@
 @extends('app.layouts.basico') <!-- Pega o layout -->
 @section('titulo', 'Produto - ADD')
-    
+
 @section('conteudo')
 <div class="conteudo-pagina">
     <div class="titulo-pagina-2">
