@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdutoDetalheController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,7 @@ Route::get('/login', 'LoginController@index')->name('site.login');
 Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
 Route::middleware('autenticacao:padrao')->prefix('/app')->group(function(){
-    
+
     Route::get('/home', 'HomeController@index')->name('app.home');
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
     Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
@@ -44,6 +45,9 @@ Route::middleware('autenticacao:padrao')->prefix('/app')->group(function(){
 
     # Produto
     Route::resource('produto', ProdutoController::class);
+
+    # Produto Detalhes
+    Route::resource('produto-detalhe', 'ProdutoDetalheController');
 });
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');

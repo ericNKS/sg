@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                     <td>Peso:</td>
-                    <td> {{$produto->peso}} </td>
+                    <td> {{$produto->peso}} kg</td>
                 </tr>
                 <tr>
                     <td>Unidade de Medida:</td>
