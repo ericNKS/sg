@@ -1,5 +1,5 @@
 @extends('app.layouts.basico') <!-- Pega o layout -->
-@section('titulo', 'Produto - ADD')
+@section('titulo', 'Editar Produto Produto')
 
 @section('conteudo')
 <div class="conteudo-pagina">
