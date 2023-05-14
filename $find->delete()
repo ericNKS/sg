@@ -1,0 +1,11 @@
+[90m= [39m[34;4mApp\Fornecedor[39;24m {#4458
+    [34mid[39m: [35m6[39m,
+    [34mnome[39m: "[32mFornecedor Pardrao SG[39m",
+    [34msite[39m: "[32mfornecedorpardraosg.com.br[39m",
+    [34mcreated_at[39m: [36mnull[39m,
+    [34mupdated_at[39m: [36mnull[39m,
+    [34muf[39m: "[32mBA[39m",
+    [34memail[39m: "[32mcontato@fornecedorpardraosg.com.br[39m",
+    [34mdeleted_at[39m: [36mnull[39m,
+  }
+
