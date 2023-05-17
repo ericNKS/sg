@@ -53,7 +53,7 @@ Route::middleware('autenticacao:padrao')->prefix('/app')->group(function(){
     #Route::resource('pedido-produto', 'PedidoProdutoController');
     Route::get('pedido-produtos/create/{pedido}', 'PedidoProdutoController@create')->name('pedido-produto.create');
     Route::post('pedido-produtos/store/{pedido}', 'PedidoProdutoController@store')->name('pedido-produto.store');
-    Route::delete('pedido-produtos/delete/{pedido}/{produto}', 'PedidoProdutoController@destroy')->name('pedido-produto.destroy');
+    Route::delete('pedido-produtos/delete/{pedidoProduto}', 'PedidoProdutoController@destroy')->name('pedido-produto.destroy');
 });
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
